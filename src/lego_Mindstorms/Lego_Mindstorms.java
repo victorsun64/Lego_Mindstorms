@@ -8,7 +8,7 @@ public class Lego_Mindstorms {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		//crack
+		//crack.com
 		
 	}
 
