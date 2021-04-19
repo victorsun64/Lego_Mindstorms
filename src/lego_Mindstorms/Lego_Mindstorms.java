@@ -5,6 +5,7 @@ package lego_Mindstorms;
 
 import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.MotorPort;
+import lejos.hardware.port.SensorPort;
 import lejos.robotics.RegulatedMotor;
 import lejos.utility.Delay;
 import lejos.hardware.sensor.EV3UltrasonicSensor;
@@ -23,9 +24,10 @@ public class Lego_Mindstorms {
 		RegulatedMotor links = new EV3LargeRegulatedMotor(MotorPort.A);
 		RegulatedMotor rechts = new EV3LargeRegulatedMotor(MotorPort.B);
 		RegulatedMotor gabel = new EV3LargeRegulatedMotor(MotorPort.C);
+		EV3UltrasonicSensor sonic = new EV3UltrasonicSensor(SensorPort.S1);
 		if (Button.ENTER = true != null) {
 			for (int i = 0; i <= 4; i++) {
-				while (EV3UltrasonicSensor.getDistanceMode() > 0.05) {
+				while (sonic.getDistanceMode() > 0.05) {
 					rechts.forward();
 					links.forward();
 				}
@@ -33,7 +35,7 @@ public class Lego_Mindstorms {
 				rechts.rotate(90);
 			}
 			;
-			if (EV3UltrasonicSensor.getDistanceMode() <= 0.05) {
+			if (sonic.getDistanceMode() <= 0.05) {
 				gabel.forward();
 			}
 			;
