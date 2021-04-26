@@ -21,10 +21,10 @@ public class Lego_Mindstorms {
 	 */
 	public static void main(String[] args) {
 		// crack.com
-		RegulatedMotor links = new EV3LargeRegulatedMotor(MotorPort.A);
-		RegulatedMotor rechts = new EV3LargeRegulatedMotor(MotorPort.B);
-		RegulatedMotor lgabel = new EV3LargeRegulatedMotor(MotorPort.C);
-		RegulatedMotor rgabel = new EV3LargeRegulatedMotor(MotorPort.D);
+		RegulatedMotor rechts = new EV3LargeRegulatedMotor(MotorPort.A);
+		RegulatedMotor links = new EV3LargeRegulatedMotor(MotorPort.B);
+		RegulatedMotor rgabel = new EV3LargeRegulatedMotor(MotorPort.C);
+		RegulatedMotor lgabel = new EV3LargeRegulatedMotor(MotorPort.D);
 		EV3UltrasonicSensor sonic = new EV3UltrasonicSensor(SensorPort.S1);
 		if (Button.ENTER = true != null) {
 			for (int i = 0; i <= 4; i++) {
