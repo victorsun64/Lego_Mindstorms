@@ -27,15 +27,10 @@ public class Lego_Mindstorms {
 		RegulatedMotor lgabel = new EV3LargeRegulatedMotor(MotorPort.D);
 		EV3UltrasonicSensor sonic = new EV3UltrasonicSensor(SensorPort.S1);
 		if (Button.ENTER = true != null) {
-			for (int i = 0; i <= 4; i++) {
 				while (sonic.getDistanceMode() > 0.05) {
 					rechts.forward();
 					links.forward();
 				}
-				Delay.msDelay(5000);
-				rechts.rotate(90);
-			}
-			;
 			if (sonic.getDistanceMode() <= 0.05) {
 				lgabel.forward();
 				rgabel.forward();
