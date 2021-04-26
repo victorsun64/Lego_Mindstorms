@@ -23,7 +23,8 @@ public class Lego_Mindstorms {
 		// crack.com
 		RegulatedMotor links = new EV3LargeRegulatedMotor(MotorPort.A);
 		RegulatedMotor rechts = new EV3LargeRegulatedMotor(MotorPort.B);
-		RegulatedMotor gabel = new EV3LargeRegulatedMotor(MotorPort.C);
+		RegulatedMotor lgabel = new EV3LargeRegulatedMotor(MotorPort.C);
+		RegulatedMotor rgabel = new EV3LargeRegulatedMotor(MotorPort.D);
 		EV3UltrasonicSensor sonic = new EV3UltrasonicSensor(SensorPort.S1);
 		if (Button.ENTER = true != null) {
 			for (int i = 0; i <= 4; i++) {
@@ -36,7 +37,8 @@ public class Lego_Mindstorms {
 			}
 			;
 			if (sonic.getDistanceMode() <= 0.05) {
-				gabel.forward();
+				lgabel.forward();
+				rgabel.forward();
 			}
 			;
 		}
