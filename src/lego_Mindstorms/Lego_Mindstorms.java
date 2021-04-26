@@ -32,8 +32,8 @@ public class Lego_Mindstorms {
 					links.forward();
 				}
 			if (sonic.getDistanceMode() <= 0.05) {
-				lgabel.forward();
-				rgabel.forward();
+				lgabel.backward();
+				rgabel.backward();
 			}
 			;
 		}
