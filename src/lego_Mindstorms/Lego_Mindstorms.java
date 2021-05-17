@@ -32,27 +32,17 @@ public class Lego_Mindstorms {
 
 		if (Button.ENTER.isDown()) {
 			
-	        final int iteration_threshold = 1000;
-	        for(int i = 0; i <= iteration_threshold; i++) {
+	        final int distancethreshold = 1000;
+	        for(int i = 0; i <= distancethreshold; i++) {
 
 	        	float [] sample = new float[sp.sampleSize()];
 	            sp.fetchSample(sample, 0);
 	            distanceValue = (int)sample[0];
 
-				System.out.println("Iteration: " + i + ", Distance: " + distanceValue);
+				if ( distanceValue < 0.1 ) {lgabel.backward();
+				rgabel.backward();}
 				
-	        }
-
-
-				while ()
-						 {
-					rechts.forward();
-					links.forward();
-				}
-			if ()
-					 {
-				lgabel.backward();
-				rgabel.backward();
+	     
 			}
 			;
 		}
