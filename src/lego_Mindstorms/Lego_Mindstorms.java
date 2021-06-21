@@ -45,6 +45,8 @@ public class Lego_Mindstorms {
 			while (distanceValue < 0.3) {
 				rgabel.backward();
 				lgabel.backward();
+				links.forward();
+				rechts.forward();
 			}
 
 		}
