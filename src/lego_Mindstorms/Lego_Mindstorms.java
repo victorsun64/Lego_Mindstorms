@@ -9,6 +9,7 @@ import lejos.hardware.port.SensorPort;
 import lejos.robotics.RegulatedMotor;
 import lejos.robotics.SampleProvider;
 import lejos.hardware.sensor.EV3IRSensor;
+import lejos.hardware.sensor.EV3UltrasonicSensor;
 
 public class Lego_Mindstorms {
 
@@ -16,7 +17,7 @@ public class Lego_Mindstorms {
 	private static RegulatedMotor links;
 	private static RegulatedMotor rgabel;
 	private static RegulatedMotor lgabel;
-	private static EV3IRSensor sonic;
+	private static EV3UltrasonicSensor sonic;
 
 	/**
 	 * @param args
@@ -28,7 +29,7 @@ public class Lego_Mindstorms {
 		links = new EV3LargeRegulatedMotor(MotorPort.B);
 		rgabel = new EV3LargeRegulatedMotor(MotorPort.C);
 		lgabel = new EV3LargeRegulatedMotor(MotorPort.D);
-		sonic = new EV3IRSensor(SensorPort.S4);
+		sonic = new EV3UltrasonicSensor(SensorPort.S4);
 		final SampleProvider sp = sonic.getDistanceMode();
 		while(true) {
 
@@ -36,12 +37,12 @@ public class Lego_Mindstorms {
 			sp.fetchSample(sample, 0);
 			int distanceValue = (int) sample[0];
 
-			while (distanceValue > 30) {
+			while (distanceValue > 0.3) {
 				links.forward();
 				rechts.forward();
 			}
 			;
-			while (distanceValue < 30) {
+			while (distanceValue < 0.3) {
 				rgabel.backward();
 				lgabel.backward();
 			}
